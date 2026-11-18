@@ -19,8 +19,9 @@ title: Équipe et rôles
 
 | Membre | Formation | Compte GitHub |
 |---|---|---|
-| Prénom Nom | … | [@pseudo](https://github.com/pseudo) |
-| Prénom Nom | … | [@pseudo](https://github.com/pseudo) |
+| Matteo Papavero | I2 | [@matteo-papavero](https://github.com/matteo-papavero) |
+| Auguste Dartoy | I2 | [@Auguste-852](https://github.com/Auguste-852) |
+| Erwann Leray-Viville | I2 | [@](https://github.com/) |
 
 ## Rôles
 
@@ -35,11 +36,11 @@ title: Équipe et rôles
 
 | Rôle | Responsable | Backup | Ce qu'il couvre |
 |---|---|---|---|
-| Mécanique / CAO | … | … | Conception, impression, assemblage |
-| Électronique | … | … | Schéma, câblage, PCB |
-| Logiciel / firmware | … | … | Code embarqué, tests logiciels |
-| Coordination documentation | … | … | Cohérence du site, structure, relecture finale |
-| Coordination / planning | … | … | Suivi des délais, animation des réunions |
+| Mécanique / CAO | Matteo | Auguste | Conception, impression, assemblage |
+| Électronique | Matteo | Auguste | Schéma, câblage, PCB |
+| Logiciel / firmware | Auguste | Erwann | Code embarqué, tests logiciels |
+| Coordination documentation | Erwann | Auguste | Cohérence du site, structure, relecture finale |
+| Coordination / planning | Erwann | Erwann | Suivi des délais, animation des réunions |
 
 ## Fonctionnement
 

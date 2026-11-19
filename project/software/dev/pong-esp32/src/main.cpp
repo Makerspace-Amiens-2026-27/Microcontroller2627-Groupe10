@@ -1,35 +1,63 @@
 #include <Arduino.h>
 
-// Définition des broches du joystick
-#define PIN_JOYSTICK_X      1
-#define PIN_JOYSTICK_Y      3
-#define PIN_JOYSTICK_SELECT 5
+constexpr int PIN_BUZZER          = D3;
+constexpr int PIN_BUTTON          = D5;
+
+constexpr int PRESSED_LEVEL = LOW;           // niveau lu quand on appuie (étape 1)
+constexpr unsigned long DEBOUNCE_MS = 30;
+
+unsigned long debutBip = 0;
+bool bipEnCours = false;
+
+struct Button {
+    int pin;
+    int stableLevel;              // dernier niveau confirmé
+    int lastRead;                 // dernière lecture brute
+    unsigned long lastChangeMs;   // date du dernier mouvement du signal
+};
+
+Button button = {PIN_BUTTON, !PRESSED_LEVEL, !PRESSED_LEVEL, 0};
+
+// Renvoie true une seule fois par appui, au moment où il est confirmé
+bool justPressed(Button& b) {
+    int level = digitalRead(b.pin);
+    if (level != b.lastRead) {         // le signal bouge : rebond ou vrai changement
+        b.lastRead = level;
+        b.lastChangeMs = millis();
+    }
+    if (millis() - b.lastChangeMs > DEBOUNCE_MS && level != b.stableLevel) {
+        b.stableLevel = level;         // stable depuis 30 ms : changement confirmé
+        return level == PRESSED_LEVEL; // vrai sur l'appui, faux sur le relâchement
+    }
+    return false;
+}
+
+void bip(bool demarrer = false) {
+    if (demarrer && !bipEnCours) {
+        tone(PIN_BUZZER, 1000);
+        debutBip = millis();
+        bipEnCours = true;
+    }
+
+    if (bipEnCours && millis() - debutBip >= 100) {
+        noTone(PIN_BUZZER);
+        bipEnCours = false;
+    }
+}
 
 void setup() {
-    // Initialisation du moniteur série
     Serial.begin(115200);
 
-    // Configuration des broches
-    pinMode(PIN_JOYSTICK_X, INPUT);
-    pinMode(PIN_JOYSTICK_Y, INPUT);
-    pinMode(PIN_JOYSTICK_SELECT, INPUT_PULLDOWN);
-
-    // Configuration de la résolution analogique
-    analogReadResolution(12); // Valeurs entre 0 et 4095
+    pinMode(PIN_BUTTON, INPUT_PULLUP);
+    pinMode(PIN_BUZZER, OUTPUT);
 }
 
 void loop() {
-    // Lecture des axes analogiques
-    int x = analogRead(PIN_JOYSTICK_X);
-    int y = analogRead(PIN_JOYSTICK_Y);
-
-
-    // Affichage des valeurs
-    Serial.print(">X:"); 
-    Serial.println(x);
-    
-    Serial.print(">Y:");
-    Serial.println(y);
-
-    delay(100);
+    static int count = 0;
+    if (justPressed(button)) {
+        count++;
+        Serial.printf("Appui n°%d\n", count);
+        bip(true);
+    }
+    bip();
 }

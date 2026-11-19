@@ -5,32 +5,25 @@ title: Accueil
 permalink: /
 ---
 
-{: .a_supprimer }
-> Ce site est le **template de documentation** de votre projet. Tout ce qui est
-> marqué « À modifier » est un exemple à remplacer par votre contenu, tout ce qui
-> est marqué « À supprimer » est une consigne à retirer avant le rendu final.
->
-> Le découpage des pages est un **point de départ** : ajoutez, renommez, divisez
-> les pages selon les besoins de votre projet.
->
-> Les guides pour prendre en main ce template sont sur le
-> [site de documentation du MakerSpace](https://doc.makerspace-amiens.fr/workshops/methodologie-de-projet/).
 
-# Nom du projet
+# RetroCore
+# 🎮 RetroCore — Console portable rétro
 
-{: .a_modifier }
-> Remplacez le titre ci-dessus et le texte ci-dessous par une présentation de votre projet.
 
-Décrivez ici en quelques lignes l'objectif de votre projet. Quel est son but ?
-À qui est-il destiné ? Quel problème cherche-t-il à résoudre ?
 
-[Notre repo GitHub]({{ site.gh_edit_repository }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Notre projet sur Onshape](https://cad.onshape.com/){: .btn .fs-5 .mb-4 .mb-md-0 }
+RetroCore est un projet de conception et de réalisation d'une console de jeu portable inspirée des célèbres consoles rétro de type Game Boy.
 
-{: .a_modifier }
-> Remplacez le lien du bouton « Onshape » par le lien de partage de votre document.
-> Le bouton « repo GitHub » utilise l'adresse renseignée dans `docs/_config.yml`.
+L'objectif est de concevoir une console fonctionnelle en intégrant différentes compétences en mécanique, électronique et programmation embarquée.
 
+Le projet comprend la conception du boîtier en CAO, l'intégration des composants électroniques (microcontrôleur, écran, joystick et boutons), ainsi que le développement du logiciel permettant de gérer les interactions et les jeux.
+
+Destinée aux amateurs de jeux vidéo rétro et aux passionnés de technologie, RetroCore a pour ambition de proposer une console compacte, interactive et entièrement réalisée par notre équipe.
+
+---
+
+💻 Code à mettre
+
+📐 projet à mettre
 ## Le projet en 3D
 
 {% include model3d.html src="assets/models/Otto.glb" alt="Modèle 3D du robot Otto" %}

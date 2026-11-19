@@ -1,22 +1,17 @@
 ---
 layout: default
-title: "AAAA-MM-JJ : sujet de la séance"
-parent: Prénom Nom
-grand_parent: Journal de bord
+title: 2026-**-**
+parent: Journal de bord
+has_children: true
 ---
 
-<!--
-Modèle de séance, ce fichier n'apparaît pas sur le site (son nom commence par "_").
-Copiez-le dans votre dossier, renommez la copie avec la date (ex. 2026-09-23.md), puis :
-- title : la date et le sujet de la séance ;
-- parent : EXACTEMENT le titre de votre page étudiant (docs/journal/votre-dossier/index.md).
--->
+# Groupe 10
 
 # AAAA-MM-JJ : sujet de la séance
 
-**Séance :** planifiée / hors créneau · **Durée :** 2 h
+**Séance :** planifiée · **Durée :** 1h30
 
-## Fait
+## Actions effectuées
 
 Ce que j'ai réalisé pendant la séance.
 
@@ -24,6 +19,8 @@ Ce que j'ai réalisé pendant la séance.
 
 Les décisions prises et leurs raisons (mesures, essais, échanges avec l'équipe).
 
-## Reste à faire
+## Idées pour la prochaine séance
 
 Les prochaines actions, et ce qui bloque éventuellement.
+Voici directement le code Markdown (`.md`) à coller dans VS Code :
+
